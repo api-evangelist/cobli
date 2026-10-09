@@ -1,0 +1,24 @@
+generated: '2026-10-09'
+method: derived
+generator: derive-mcp-candidate.py
+source:
+- openapi/_ae-authored/cobli-openapi-generated.yml
+status: candidate
+deployment:
+  mode: none
+  auth: unknown
+  verified: probed
+note: 'No MCP server was found. The pre-flight posted tools/list to /mcp on api.cobli.co, www.cobli.co, blog.cobli.co, docs.cobli.co; verdict
+  gated (https://docs.cobli.co/mcp answered 401: the edge authenticates before it routes, which proves nothing either way). Candidate tools below
+  are derived from the 2 operation(s) in the provider''s own OpenAPI (2 listed); they describe what a server WOULD expose, not one that exists.'
+tools:
+- name: get_public_v1_paths
+  operationId: get_public_v1_paths
+  method: GET
+  path: /public/v1/paths
+  description: Detalhes de trajetos e paradas
+- name: get_public_v2_events
+  operationId: get_public_v2_events
+  method: GET
+  path: /public/v2/events
+  description: Use GET /public/v2/events to reconcile deliveries of the last 15 days.

@@ -1,23 +1,111 @@
 aid: cobli
+
 name: Cobli
-description: 'Cobli is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://www.cobli.co/share-image.png
+
+description: Cobli provides a fleet management platform that combines video telematics, traditional telematics, and mobile applications to give
+  operators real‑time visibility, reduce costs, improve driver safety, and optimize routes. The solution includes video‑based driver monitoring,
+  AI‑driven analytics, fuel and maintenance tracking, and compliance tools, serving logistics companies and vehicle fleets across Brazil and Latin
+  America.
+
 url: https://raw.githubusercontent.com/api-evangelist/cobli/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-09 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-09'
+
 modified: '2026-10-09'
+
 tags:
 - Company
-apis: []
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Spectral
+  url: rules/cobli-rules.yml
+- type: JSONLD
+  url: json-ld/cobli-context.jsonld
+- type: Vocabulary
+  url: vocabulary/cobli-vocabulary.yml
+- type: Webhooks
+  url: asyncapi/cobli-webhooks.yml
+- type: DataModel
+  url: data-model/cobli-data-model.yml
+- type: Conformance
+  url: conformance/cobli-conformance.yml
+- type: LLMsTxt
+  url: llms/cobli-llms.txt
+- type: WellKnown
+  url: well-known/cobli-well-known.yml
+- type: Hosts
+  url: hosts/cobli-hosts.yml
+- type: Vendors
+  url: vendors/cobli-vendors.yml
+- type: Blog
+  url: https://blog.cobli.co/
+- type: APIReference
+  url: https://docs.cobli.co/reference
+- type: Documentation
+  url: https://docs.cobli.co/
+- type: DomainSecurity
+  url: security/cobli-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/cobli
+  url: https://www.cobli.co
+
+apis:
+- name: Cobli API
+  description: Fleet management API documented at Cobli developer reference.
+  humanURL: https://docs.cobli.co/reference
+  baseURL: null
+  aid: cobli:cobli-api-2
+- aid: cobli:cobli-api
+  name: Cobli API
+  description: 'Cobli API as documented publicly: 2 operations. Contract generated from the documentation by API Evangelist (2026-10-09); not
+
+    the provider''s own document.'
+  humanURL: https://docs.cobli.co/reference/eta.md
+  baseURL: https://api.cobli.co
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/cobli-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/cobli-get-public-v1-paths-response-schema.json
+
+x-coverage:
+  state: gated
+  reason: partner-login
+  method: derived
+  generated: '2026-10-09'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: the company serves an API surface but requires credentials before any description of it can be read
+  evidence:
+  - url: https://blog.cobli.co/graphql
+    status: null
+  - url: https://docs.cobli.co/mcp
+    status: 401
+  - url: https://painel.cobli.co/mcp
+    status: 403
+  - url: https://www.cobli.co
+    status: 200
+  - url: https://equityzen.com/company/cobli
+    status: 403
+x-enrichment:
+  date: '2026-10-09'
+  status: enriched
+  artifacts_added: 20
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

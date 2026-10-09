@@ -1,0 +1,15 @@
+generated: '2026-10-09'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/cobli-openapi-generated.yml
+vocabulary:
+  name: Cobli Domain Vocabulary
+  description: 'Terms declared by Cobli''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-09'
+  terms:
+  - term: GetPublicV1PathsResponse
+    definition: 'Object declared by the contract with fields: 200, 401, 404, 500.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/cobli-openapi-generated.yml#/components/schemas/GetPublicV1PathsResponse

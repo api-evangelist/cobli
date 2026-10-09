@@ -1,0 +1,73 @@
+generated: '2026-10-09'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.cobli.co/reference/listwebhookeventsv2.md
+sources:
+- https://docs.cobli.co/reference/listwebhookeventsv2.md
+- https://docs.cobli.co/reference/listwebhookeventsv2
+- https://docs.cobli.co/reference/webhookgeofencein
+- https://docs.cobli.co/reference/webhookgeofenceout
+description: Cobli sends POST application/json webhooks for the listed event types.
+events:
+- event: geofence_in
+  description: Veículo entrou em um ponto de interesse
+- event: geofence_out
+  description: Veículo saiu de um ponto de interesse
+- event: ignition_on
+  description: Ignição ligada
+- event: ignition_off
+  description: Ignição desligada
+- event: position
+  description: Posição periódica com ignição ligada
+- event: position_sleep
+  description: Posição periódica com ignição desligada
+- event: alert_driven_over_speed
+  description: Início de alerta de excesso de velocidade
+- event: end_alert_driven_over_speed
+  description: Fim de alerta de excesso de velocidade
+- event: battery_external_low
+  description: Tensão da bateria externa abaixo do threshold
+- event: battery_external_disconnected
+  description: Bateria externa desconectada
+- event: battery_external_reconnected
+  description: Bateria externa reconectada
+- event: hard_break
+  description: Frenagem brusca detectada pela câmera
+- event: fast_acceleration
+  description: Aceleração brusca detectada pela câmera
+- event: speedy_turn
+  description: Curva acentuada detectada pela câmera
+- event: tailgating
+  description: Seguimento próximo detectado pela câmera
+- event: front_collision_warning
+  description: Aviso de colisão frontal detectado pela câmera
+- event: distracted_driving
+  description: Distração ao volante detectada pela câmera
+- event: eyes_closed
+  description: Olhos fechados detectados pela câmera
+- event: phone_usage
+  description: Uso de celular detectado pela câmera
+- event: smoking
+  description: Uso de cigarro detectado pela câmera
+- event: yawn
+  description: Bocejo detectado pela câmera
+- event: sos
+  description: Sinal SOS acionado pelo motorista
+- event: route_started
+  description: Motorista iniciou a rota
+- event: route_finished
+  description: Rota encerrada
+- event: activity_completed
+  description: Parada concluída
+- event: activity_failed
+  description: Parada marcada como não realizada
+- event: ignition_lock_status_changed
+  description: Status da trava de ignição mudou
+- event: allow_list_changed
+  description: Lista de motoristas autorizados mudou
+delivery:
+  signature: HMAC‑SHA256 of the request body, provided in header `X-Cobli-Signature` (hex encoded)
+  content_type: application/json
+note: Custom headers may be added per subscription; `X-Cobli-Signature`, `Authorization`, `Content-Type`, and `User-Agent` are reserved and cannot
+  be overridden.
+docs: https://docs.cobli.co/reference/listwebhookeventsv2.md
