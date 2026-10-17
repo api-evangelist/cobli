@@ -71,20 +71,18 @@ apis:
   humanURL: https://docs.cobli.co/reference
   baseURL: null
   aid: cobli:cobli-api-2
-- aid: cobli:cobli-api
-  name: Cobli API
-  description: 'Cobli API as documented publicly: 2 operations. Contract generated from the documentation by API Evangelist (2026-10-09); not
-
-    the provider''s own document.'
-  humanURL: https://docs.cobli.co/reference/eta.md
+- aid: cobli:cobli-public-api
+  name: Cobli Public API
+  description: The Public API from Cobli — 2 operation(s) for public.
+  humanURL: https://docs.cobli.co/reference
   baseURL: https://api.cobli.co
+  tags:
+  - Public
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/cobli-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/cobli-public-api-openapi.yml
   - type: JSONSchema
     url: json-schema/cobli-get-public-v1-paths-response-schema.json
-
 x-coverage:
   state: gated
   reason: partner-login
